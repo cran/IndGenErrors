@@ -9,7 +9,7 @@
 #'
 #'@references  Duchesne, Ghoudi & Remillard  (2012). On Testing for independence between the innovations of several time series. CJS, vol. 40, 447-479.
 #'@examples
-#'Romano-Siegel's example #
+#'  #Romano-Siegel's example #
 #'data(romano_ex)
 #'outr = crosscor_3series(romano_ex$x,romano_ex$y,romano_ex$z,5,2)
 #'CrossCorrelogram(outr$out123,"{x,y,z}",rot=90)

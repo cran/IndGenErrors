@@ -208,15 +208,6 @@ out = list(out12=out12,out13=out13,out23=out23,out123=out123,outall=out00);
 
 
 
-# if(graph)
-# {
-#   Dependogram(out12,"cvm{1,2}")
-#   Dependogram(out13,"cvm{1,3}")
-#   Dependogram(out23,"cvm{2,3}")
-#   Dependogram(out123,"cvm{1,2,3}",rot=90)
-#
-# }
-
 
 
 out

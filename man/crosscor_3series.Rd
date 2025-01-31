@@ -18,16 +18,16 @@ crosscor_3series(x, y, z, lag2, lag3)
 \item{lag3}{Maximum number of lags around 0 for the three series.}
 }
 \value{
-\item{LB}{Cross-correlations for all lags  and for all subsets}
+\item{stat}{Cross-correlations for all lags  and for all subsets}
 
 \item{H}{Sum of squares of cross-correlations for all subsets}
 
-\item{pvalue}{P-value of LB for all subsets and H}
+\item{pvalue}{P-value of stat for all subsets and H}
 
 \item{n}{length of the time series}
 }
 \description{
-This function computes the cross-correlations for all lags = -lag2, .. lag2, for all pairs, and for pair of lags = (-lag3,-lag3),...(lag3,lag3) for the three series3.
+This function computes the cross-correlations for all lags = -lag2, .. lag2, for all pairs, and for pair of lags = (-lag3,-lag3),...(lag3,lag3) for the three series.
 }
 \examples{
 # Romano-Siegel's example #

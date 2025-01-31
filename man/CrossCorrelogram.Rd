@@ -19,6 +19,13 @@ CrossCorrelogram(object, comb, rot = 0)
 \description{
 This function, used in crosscor_2series and crosscor_3series plots the graphs of the cross-correlation statistics.
 }
+\examples{
+ #Romano-Siegel's example #
+data(romano_ex)
+outr = crosscor_3series(romano_ex$x,romano_ex$y,romano_ex$z,5,2)
+CrossCorrelogram(outr$out123,"{x,y,z}",rot=90)
+
+}
 \references{
 Duchesne, Ghoudi & Remillard  (2012). On Testing for independence between the innovations of several time series. CJS, vol. 40, 447-479.
 }

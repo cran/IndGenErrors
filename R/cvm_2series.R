@@ -74,7 +74,7 @@ pvalue=list(cvm = PV12,Wstat = out0$PVW12,Fstat =out0$PVF12)
 out = list(cvm=T12,Wstat=out0$W12, Fstat=out0$F12,pvalue=pvalue,subsets=c(-lag:lag))
 if(graph)
 {
-  Dependogram(out,stat="cvm")
+  dependogram(out,stat="cvm")
 }
 
 

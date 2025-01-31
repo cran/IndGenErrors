@@ -706,7 +706,7 @@ double Phi(double x)    /*Distribution function of the standard Gaussian r.v.   
       mat1=0.0; mat2=0.0;
       m1 = mean(r1,n);
       m2 = mean(r2,n);
-     
+
       for(i=0;i<n;i++)
       {
          mat1=mat1+(r1[i]-m1)*(r1[i]-m1);
@@ -935,6 +935,7 @@ double Phi(double x)    /*Distribution function of the standard Gaussian r.v.   
 
       W[0] = W12[0]+W13[0]+W23[0]+W123[0];
    }
+
 
 
 

@@ -1,16 +1,15 @@
 #'@title Cross-correlations statistics for testing independence between the innovations of 3 series of same length
-#'@description This function computes the cross-correlations for all lags = -lag2, .. lag2, for all pairs, and for pair of lags = (-lag3,-lag3),...(lag3,lag3) for the three series3.
+#'@description This function computes the cross-correlations for all lags = -lag2, .. lag2, for all pairs, and for pair of lags = (-lag3,-lag3),...(lag3,lag3) for the three series.
 #'
 #'@param x           Pseudo-observations (or residuals) of first series.
 #'@param y           Pseudo-observations (or residuals) of second series.
 #'@param z           Pseudo-observations (or residuals) of third series.
 #'@param lag2        Maximum number of lags around 0 for pairs of series.
 #'@param lag3        Maximum number of lags around 0 for the three series.
-#
 #'
-#'@return \item{LB}{Cross-correlations for all lags  and for all subsets}
+#'@return \item{stat}{Cross-correlations for all lags  and for all subsets}
 #'@return \item{H}{Sum of squares of cross-correlations for all subsets}
-#'@return \item{pvalue}{P-value of LB for all subsets and H}
+#'@return \item{pvalue}{P-value of stat for all subsets and H}
 #'@return \item{n}{length of the time series}
 #'
 #'@references Duchesne, Ghoudi & Remillard  (2012). On Testing for independence between the innovations of several time series. CJS, vol. 40, 447-479.
@@ -175,16 +174,15 @@ sum3=0;
           }
    }
 
-#out = list(stat=R12,LB=out0$H12,pvalue = 1-pchisq(out0$H12,m),subsets=c(-lag:lag))
 PVH12 = 1-pchisq(out2$H12,m1);
 PVH13 = 1-pchisq(out2$H13,m1);
 PVH23 = 1-pchisq(out2$H23,m1);
 PVH123 = 1-pchisq(out2$H123,m2);
 PVH = 1-pchisq(out2$H,(3*m1+m2));
-out12 = list(LB=R12,pvalue=PVH12,subsets=c(-lag2:lag2),n=n)
-out13 = list(LB=R13,pvalue=PVH13,subsets=c(-lag2:lag2),n=n)
-out23 = list(LB=R23,pvalue=PVH23,subsets=c(-lag2:lag2),n=n)
-out123 = list(LB=R123,pvalue=PVH123,subsets=subsets,n=n)
+out12 = list(stat=R12,H12=out2$H12,pvalue=PVH12,subsets=c(-lag2:lag2),n=n)
+out13 = list(stat=R13,H13=out2$H13,pvalue=PVH13,subsets=c(-lag2:lag2),n=n)
+out23 = list(stat=R23,H23=out2$H23,pvalue=PVH23,subsets=c(-lag2:lag2),n=n)
+out123 = list(stat=R123,H123=out2$H123,pvalue=PVH123,subsets=subsets,n=n)
 out=list(out12=out12,out13=out13,out23=out23,out123=out123,H=out0$H,pvalue.H=PVH)
 
 
